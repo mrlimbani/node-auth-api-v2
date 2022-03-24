@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "ebc44c3e-67b8-4668-b14d-a4ae6def9a85",
+		"name": "Admin Panel Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"test@test.com\",\n    \"password\": \"Admin123\",\n    \"firstName\" : \"test\",\n    \"lastName\" : \"test\",\n    \"displayName\" : \"Admin\",\n    \"dob\" : \"18/06/1997\",\n    \"privacy\": \"true\",\n    \"deviceToken\" : \"sa64asdf64as56f\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}v1/auth/register",
+							"host": [
+								"{{base_url}}v1"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"test@test.com\",\n    \"password\": \"Admin123\",\n    \"deviceToken\" : \"sa64asdf64as56f\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}v1/auth/login",
+							"host": [
+								"{{base_url}}v1"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000/"
+		},
+		{
+			"key": "jwt",
+			"value": "token"
+		}
+	]
+}
